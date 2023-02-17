@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout nodecg/nodecg
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets['GITHUB_TOKEN'] }}
           repository: nodecg/nodecg
@@ -19,7 +19,7 @@ jobs:
         run: cp -r ./nodecg-temp ./nodecg
 
       - name: Checkout this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets['GITHUB_TOKEN'] }}
           ref: ${{ github.ref }}
@@ -27,7 +27,7 @@ jobs:
           path: ./nodecg/bundles/splatalittle-overlays
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'npm'
@@ -45,12 +45,6 @@ jobs:
       - name: Run ESLint on source
         working-directory: ./nodecg/bundles/splatalittle-overlays
         run: npm run lint
-
-      - name: Set up GitHub for SSH access
-        if: github.ref == 'refs/heads/master'
-        uses: webfactory/ssh-agent@master
-        with:
-          ssh-private-key: ${{ secrets['GH_SSH'] }}
 
       - name: Set git config
         if: github.ref == 'refs/heads/master'

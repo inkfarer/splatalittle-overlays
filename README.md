@@ -36,5 +36,6 @@ Broadcast overlays for [Splatalittle.](https://www.twitch.tv/splatalittlespl)
 This repository includes a GitHub Actions script that automatically lints and builds the overlays.
 It requires two secrets to function:
 
-- `GH_SSH`: An SSH key with permissions to push to the package's GitHub repository. Used for pushing the build result.
 - `GSAP_AUTH`: The GSAP authorization token, used to pull packages from npm.
+
+Please assure that the repository's GITHUB_TOKEN is configured to have write access to the repo.
