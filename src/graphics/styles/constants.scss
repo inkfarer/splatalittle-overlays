@@ -1,0 +1,44 @@
+$default-border-radius: 4px;
+
+$text-color: #F3F3F3;
+$text-background: #111;
+$text-background-alpha: rgba(17, 17, 17, 0.95);
+$text-background-alpha-50: rgba(17, 17, 17, 0.5);
+
+$accent-1: #D5C025;
+$accent-1-alt: scale-color($accent-1, $lightness: 20%);
+$accent-2: #00368E;
+$accent-2-alt: scale-color($accent-2, $lightness: -20%);
+$accent-2-dark-bg: scale-color($accent-2, $lightness: 35%);
+
+@mixin wave-bg($color-1, $color-2) {
+    background:
+        radial-gradient(28.5px at 50% calc(100% + 15.00px), #0000 calc(99% - 7px), $color-1 calc(101% - 7px) 99%, #0000 101%) calc(50% - 40px) calc(50% - 13.5px + .5px) / 80px 27px,
+        radial-gradient(28.5px at 50% -15px, #0000 calc(99% - 7px), $color-1 calc(101% - 7px) 99%, #0000 101%) 50% calc(50% + 13.5px) / 80px 27px,
+        $color-2;
+}
+
+@mixin wave-bg-left-align($color-1, $color-2) {
+    background:
+        radial-gradient(44.98px at 50% calc(100% + 25.60px), #0000 calc(99% - 8px), $color-1 calc(101% - 8px) 99%, #0000 101%) 64px calc(20px + .5px) / 128px 40px,
+        radial-gradient(44.98px at 50% -25.6px, #0000 calc(99% - 8px), $color-1 calc(101% - 8px) 99%, #0000 101%) 0 20px / 128px 40px,
+        $color-2;
+}
+
+@mixin gradient-border($background: linear-gradient(190deg, $accent-1, $accent-2)) {
+    &:before {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        background-origin: border-box;
+        background-image: $background;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+    }
+}

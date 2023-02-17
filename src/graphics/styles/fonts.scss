@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Sans:wght@400;500;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import 'constants';
+
+@font-face {
+    font-family: 'Gota';
+    src: url('src/assets/fonts/Gota-Light.woff2');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Gota';
+    src: url('src/assets/fonts/Gota-Regular.woff2');
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Manrope', 'Kosugi', 'Noto Sans', sans-serif;
+    font-weight: 250;
+    color: $text-color;
+}
+
+.font-numeric {
+    font-family: 'Manrope';
+    font-feature-settings: 'tnum';
+    font-weight: 900;
+}
