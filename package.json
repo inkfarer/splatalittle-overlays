@@ -1,6 +1,6 @@
 {
     "name": "splatalittle-overlays",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "description": "Broadcast overlays for Splatalittle.",
     "compatibleDashboardVersion": "^4.1.0",
     "compatibleGameVersions": [
